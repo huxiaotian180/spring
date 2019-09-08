@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mooc.mybatis.dao.PersonMapper" >
+  <resultMap id="BaseResultMap" type="com.mooc.mybatis.bean.Person" >
+  <id column="id" property="id" jdbcType="INTEGER" />
+  <result column="username" property="username" jdbcType="VARCHAR" />
+  <result column="email" property="email" jdbcType="VARCHAR" />
+  <result column="gender" property="gender" jdbcType="VARCHAR" />
+  <result column="dept_id" property="deptId" jdbcType="INTEGER" />
+</resultMap>
+
+<!-- 根据id删除数据-->
+  <delete id="deletePerson" parameterType="int">
+
+      delete from person where id=#{parameter1}
+
+  </delete>
+
+</mapper>
